@@ -137,23 +137,31 @@
   font-size: 16px;
 }
 
-.message__text {
+.message__content {
+  display: inline;
   border-radius: 10px;
   padding: 5px 10px;
-  display: inline;
   max-width: 80%;
 }
 
-.my-message .message__text {
+.message__time {
   align-self: flex-end;
+  font-size: 10px;
+}
+
+.my-message .message__content {
+  align-self: flex-end;
+}
+
+.my-message .message__content {
   background-color: #6ebff1;
 }
 
-.friend-message+.friend-message .message__text {
+.friend-message+.friend-message .message__content {
   margin-top: 3px;
 }
 
-.my-message+.my-message .message__text {
+.my-message+.my-message .message__content {
   margin-top: 3px;
 }
 
