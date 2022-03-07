@@ -1,6 +1,9 @@
+@import url(./fonts/fonts.css);
+
 .chat {
   width: 100vw;
   height: 100vh;
+  font-family: 'Raleway', sans-serif;
 }
 
 .header {
@@ -14,19 +17,37 @@
   padding: 0;
   margin: 0;
   display: flex;
-  padding: 5px;
+  padding: 5px 10px;
 }
 
 .nav__item {
-  padding: 5px;
+  padding: 5px 10px;
+  transition: all 0.1s;
+}
+
+.nav__item:not(:last-of-type) {
+  margin-right: 10px;
+}
+
+.nav__item:hover {
+  background-color: #eee;
+}
+
+.nav__link {
+  color: #000;
+  text-decoration: none;
 }
 
 .chat__content {
   display: flex;
+  align-items: stretch;
+  height: calc(100vh - 50px - 100px);
+  box-sizing: border-box;
 }
 
 .sidebar {
   width: 200px;
+  overflow-y: auto;
 }
 
 .users {
@@ -35,12 +56,148 @@
   margin: 0;
 }
 
+.user {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.1s;
+}
+
+.user:hover {
+  background-color: rgba(135, 206, 250, 0.4);
+}
+
+.user_selected {
+  background-color: #eee;
+}
+
 .user__photo {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.user__name {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: calc(200px - 50px - 10px - 15px);
+}
+
+.user__last-message {
+  max-width: calc(200px - 50px - 10px - 15px);
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+.history {
+  width: calc(100% - 200px);
+  padding: 20px 50px;
+  overflow-y: auto;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+}
+
+.friend-message+.friend-message .message__user-info,
+.my-message .message__user-info {
+  display: none;
+}
+
+.message__user-info {
+  display: flex;
+  padding: 5px;
+}
+
+.message__info {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+}
+
+.message__photo {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
+.message__user-name {
+  margin: 0 10px 0 5px;
+  font-size: 16px;
+}
+
+.message__text {
+  border-radius: 10px;
+  padding: 5px 10px;
+  display: inline;
+  max-width: 80%;
+}
+
+.my-message .message__text {
+  align-self: flex-end;
+  background-color: #6ebff1;
+}
+
+.friend-message+.friend-message .message__text {
+  margin-top: 3px;
+}
+
+.my-message+.my-message .message__text {
+  margin-top: 3px;
+}
+
 .input {
+  width: 70%;
   min-height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input__form {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+}
+
+.input__text-area {
+  width: calc(100% - 50px);
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  outline: 0;
+  padding: 5px 20px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  border-radius: 10px 0 0 10px;
+}
+
+.input__send-button {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  border-radius: 0 10px 10px 0;
+  font-size: 20px;
+  color: #fff;
+  background-color: #6ebff1;
+  transition: all 0.1s;
+}
+
+.input__send-button:hover {
+  background-color: #407291;
 }
