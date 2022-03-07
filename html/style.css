@@ -1,3 +1,6 @@
+/* Reset.css */
+@import url(./reset.css);
+
 /* Raleway Font */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700&display=swap');
 
@@ -135,7 +138,7 @@
 }
 
 .message__user-name {
-  margin: 0 10px 0 5px;
+  margin: 0 0 0 5px;
   font-size: 16px;
 }
 
@@ -210,4 +213,40 @@
 
 .input__send-button:hover {
   background-color: #407291;
+}
+
+@media (max-width: 800px) {
+  .nav__item {
+    font-size: 12px;
+    padding: 0;
+  }
+
+  .history {
+    padding: 0;
+  }
+
+  .message__user-info {
+    align-items: center;
+  }
+
+  .message__photo {
+    width: 20px;
+    height: 20px;
+  }
+
+  .message__user-name {
+    font-size: 14px;
+  }
+
+  .message__content {
+    max-width: 100%;
+  }
+
+  .message__text {
+    font-size: 12px;
+  }
+
+  .input {
+    width: 90%;
+  }
 }
