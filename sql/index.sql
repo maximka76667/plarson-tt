@@ -1,8 +1,17 @@
-CREATE TABLE dates(`name` VARCHAR(40), `title` VARCHAR(20));
+CREATE TABLE dates(`month` VARCHAR(20), `days_count` VARCHAR(2));
 
-create function monthDayCount 
-returns int
-return (day(dateadd(dd, -day(dateadd(mm, 1, @date)), dateadd(mm, 1, @date))))
-end
+INSERT INTO dates 
+VALUES('Январь', 31), 
+('Февраль', IF( MOD(YEAR(CURRENT_DATE), 4) = 0, 29, 28 )),
+('Март', 31),
+('Апрель', 30),
+('Май', 31),
+('Июнь', 30),
+('Июль', 31),
+('Август', 31),
+('Сентябрь', 30),
+('Октябрь', 31),
+('Ноябрь', 30),
+('Декабрь', 31);
 
-INSERT INTO dates VALUES('January', 'Dev'), ('February', 'Designer');
+SELECT * FROM `dates`
