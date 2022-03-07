@@ -1,7 +1,8 @@
 function onload(callback) {
-    callback();
+  callback();
+  window.addEventListener('DOMContentLoaded', () => callback())
 }
 
 onload(() => {
-    alert("Загружено");
+  alert("Загружено");
 });
